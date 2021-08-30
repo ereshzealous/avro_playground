@@ -1,0 +1,21 @@
+{
+  "name": "kafka-consumer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.7.4",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "@kafkajs/confluent-schema-registry": "^3.0.1",
+    "avro-schema-registry": "^2.1.5",
+    "avsc": "^5.7.3",
+    "express": "^4.17.1",
+    "kafka-node": "^5.0.0",
+    "kafkajs": "^1.15.0"
+  }
+}
