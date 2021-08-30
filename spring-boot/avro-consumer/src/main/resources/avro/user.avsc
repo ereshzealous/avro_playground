@@ -1,0 +1,58 @@
+{
+  "namespace": "com.spring.kafka.avro.user",
+  "type": "record",
+  "name": "UserEvent",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string"
+    },
+    {
+      "name": "eventType",
+      "type": "string"
+    },
+    {
+      "name": "eventTimestamp",
+      "type": "long",
+      "logicalType": "timestamp-micros"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "mobileNumber",
+      "type": "string"
+    },
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "createdOn",
+      "type": "long",
+      "logicalType": "timestamp-micros"
+    },
+    {
+      "name": "updatedOn",
+      "type": "long",
+      "logicalType": "timestamp-micros"
+    }
+  ]
+}

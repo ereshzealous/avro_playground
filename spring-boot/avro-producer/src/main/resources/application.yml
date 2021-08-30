@@ -1,0 +1,32 @@
+server:
+  port: 9080
+
+spring:
+  schema:
+    avro:
+      schema-locations:
+        - classpath:avro/user.avsc
+  cloud:
+    schema-registry-client:
+      endpoint: http://${SCHEMA_REGISTRY_HOST:localhost}:${SCHEMA_REGISTRY_PORT:8081}
+    stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:29092}
+          auto-add-partitions: true # (*) both user-service and event-service can create topic and add partitions
+      source: users
+      bindings:
+        users-out-0:
+          destination: com.spring.kafka.avro.newuser
+          content-type: application/*+avro
+          producer:
+            partition-count: 3 # (*)
+            #use-native-encoding: true
+
+management:
+  endpoints:
+    web:
+      exposure.include: beans, env, health, info, metrics, mappings
+  endpoint:
+    health:
+      show-details: always
